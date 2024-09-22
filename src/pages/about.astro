@@ -14,10 +14,25 @@ const happy = true;
 const finished = false;
 const goal = 3;
 
+const skillColor = "navy";
+
 const pageTitle = "About Me";
+                      
 ---
+<style define:vars={{skillColor}}>
+  h1 {
+    color: purple;
+    font-size: 4rem;
+  }
+
+  .skill {
+    color: var(--skillColor);
+    font-weight: bold;
+  }
+</style>
 
 <BaseLayout pageTitle={pageTitle}>
+
 	<h2>...all about me!</h2>
 
 	<p>Here are a few facts about me:</p>
@@ -30,7 +45,7 @@ const pageTitle = "About Me";
 </ul>
 <p>My skills are:</p>
 <ul>
-  {skills.map((skill) => <li>{skill}</li>)}
+  {skills.map((skill) => <li class="skill">{skill}</li>)}
 </ul>
 
 {happy && <p>I am happy to be learning Astro!</p>}
