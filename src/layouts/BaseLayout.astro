@@ -1,5 +1,6 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+import { fade } from 'astro:transitions';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
@@ -20,7 +21,7 @@ const { pageTitle } = Astro.props;
 	</head>
 
 
-	<body>
+	<body transition:animate={fade({ duration: '0.8s' })}>
 		<Header />
 		<h1 transition:animate="slide">{pageTitle}</h1>
         <slot />
