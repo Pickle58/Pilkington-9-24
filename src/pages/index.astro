@@ -1,10 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Greeting from '../components/Greeting';
+import { Image } from 'astro:assets';
+import studio from '../images/studio.jpg';
 const pageTitle = "Pilkington";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
 	<h2>...home page</h2>
 	<Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there", "Well, Hello!"]} />
+
+	<Image src={studio} alt="the Studio." width="200" height="300" />
 </BaseLayout>
