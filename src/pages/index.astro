@@ -10,5 +10,7 @@ const pageTitle = "Pilkington";
 	<h2>...home page</h2>
 	<Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there", "Well, Hello!"]} />
 
-	<Image src={studio} alt="the Studio." width="200" height="300" />
+	<Image src={studio} alt="the Studio."
+	widths={[240, 540, 720, studio.width]}
+  sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${studio.width}px`}  />
 </BaseLayout>
