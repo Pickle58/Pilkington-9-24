@@ -2,6 +2,8 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
+import { Image } from 'astro:assets';
+import beccaDeck from '@images/becca-deck.jpg';
 
 const pageTitle = "My Astro Learning Blog";
 const allPosts = await getCollection("posts");
@@ -15,4 +17,5 @@ const allPosts = await getCollection("posts");
       ))
     }
   </ul>
+  <Image src={beccaDeck} alt="Becca on the deck" width="200" />
 </BaseLayout>
